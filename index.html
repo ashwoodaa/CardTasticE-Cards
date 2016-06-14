@@ -71,26 +71,50 @@
     <div class="container">
         <div class="row">
             <div class="box">
-                <div class="col-lg-12">
+                <div class="col-md-4">
                     <hr>
-                    <h2 class="intro-text text-center">Send the
-                        <strong>Best</strong>
-                        E-Cards
-                    </h2>
+                    <h2 class="intro-text text-center">Form and generator buttons and text box</h2>
                     <hr>
                     <hr class="visible-xs">
-                    <p class="text-center">Here is where the Main Content will go</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
+
+                    <!--***************************
+                    To and From Form
+                    ******************************-->
+                    <form>
+                      <fieldset class="form-group">
+                        <label for="formGroupExampleInput">To: </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Optimus Prime">
+                      </fieldset>
+                      <fieldset class="form-group">
+                        <label for="formGroupExampleInput2">From: </label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Harry Potter">
+                      </fieldset>
+                     <button type="submit" class="btn btn-secondary">Submit</button>
+                    </form>
+
+                </div><!--  class col-lg-12, Form and generator buttons and text box-->
+                <div class="col-md-6"><hr>
+                    <h2 class="intro-text text-center">Actual Card</h2>
+                    <hr>
+                    <hr class="visible-xs">
+                </div><!--col-md-6-->
+                <div class="col-md-2"><hr>
+                    <h2 class="intro-text text-center">Toggle Themes Buttons</h2>
+                    <hr>
+                    <hr class="visible-xs">
+                </div><!--col-md-2-->
+            </div> <!-- box -->
+        </div> <!-- row -->
+    </div><!-- /.container -->
 
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                <hr>
                     <p>Copyright &copy; Amari Ashwood 2016</p>
+                <hr>
+                <hr class="visible-xs">
                 </div>
             </div>
         </div>
@@ -101,6 +125,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="http://pickuplinegenerator.com/api.asp" type="text/javascript"></script>
 </body>
 
 </html>
