@@ -1,3 +1,99 @@
+/*********************************************************
+To and From, Button Generators, and Personalized Text Box
+**********************************************************/
+
 .generator-buttons {
-	margin: 5px;
+	margin: 15px;
 }
+
+.personalized-text-box {
+	margin: 25px;
+}
+
+/*********************************************************
+Theme Buttons
+**********************************************************/
+
+.theme-buttons {
+	width:200px;
+	height:75px;
+	border-radius:100px;
+	font-size:20px;
+	color:#fff;
+	line-height:100px;
+	text-align:center;
+	background:#000;
+	margin: 50px;
+}
+
+
+/*CSS FOR DARK THEME*/
+
+.makeDark {
+  background-color: darkgrey;
+  border: 1px solid;
+}
+
+.makeDark .CardTasticLogo {
+	color: #000;
+}
+
+.makeDark #navBar {
+  color: black;
+}
+
+.makeDark h1 {
+  color: #DC3030;
+}
+
+.makeDark #messages {
+  border-color: white;
+}
+
+/*CSS FOR LIGHT THEME*/
+
+.makeLight .CardTasticLogo {
+	color: #B2A2B2;
+}
+
+.makeLight {
+  background-color: green;
+  color: #000;
+  border: 1px solid;
+}
+
+.makeLight #navBar {
+  color: black;
+}
+.makeLight h1 {
+  color: #0A3710;
+}
+
+.makeLight #messages {
+  border-color: white;
+}
+
+/*CSS FOR ROMANTIC THEME*/
+
+.makeRomantic .CardTasticLogo {
+	color: #A80C0C;
+}
+
+.makeRomantic {
+  background-color: #474747;
+  color: #fff;
+  border: 1px solid;
+}
+
+.makeRomantic #navBar {
+  color: black;
+
+.makeRomantic h1 {
+  color: #848584;
+}
+
+.makeRomantic #messages {
+  border-color: yellow;
+}
+
+
