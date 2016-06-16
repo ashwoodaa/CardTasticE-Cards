@@ -4,8 +4,16 @@ var CardTastic = function(object) {
 	//DECLARES DOM ELEMENT VARIABLES//
 	var messagesDiv = document.getElementById("messages");
 	var enterMessage = document.getElementById("enterMessage");
-	var clearBoard = document.getElementById("clearBoard");
+	var clearCard = document.getElementById("clearCard");
 	var userRadio = document.getElementsByClassName("userRadio");
+	var textAreaForCard = document.getElementById("textAreaForCard");
+
+	enterMessage.addEventListener("keypress", function(event){
+		console.log("logging enterMessage event", enterMessage.value );
+		textAreaForCard.innerHTML = enterMessage.value;
+		console.log("textAreaForCard", textAreaForCard );
+
+	});
 
 	//CLONES TARGET ELEMENT AND REPLACES OLD WITH NEW IN THE DOM//
 	var cloneNode = function(oldElem) {
@@ -22,32 +30,32 @@ var CardTastic = function(object) {
 		};
 	};
 
-	//CALLBACK FOR ENTER MESSAGE EVENT LISTENER//
-	var enterMessageCallback = function(event) {
-		if (event.which === 13 && enterMessage.value !== "") {
-			console.log("CardTastic.getTimeStamp()" ,CardTastic.getTimeStamp())
-			var message = {user: findUserRadioChecked(), text: event.target.value, time: CardTastic.getTimeStamp()};
-			CardTastic.setArrayItem(message);
-			event.target.value = '';
-		};
-	};
+	// //CALLBACK FOR ENTER MESSAGE EVENT LISTENER//
+	// var enterMessageCallback = function(event) {
+	// 	if (event.which === 13 && enterMessage.value !== "") {
+	// 		console.log("CardTastic.getTimeStamp()" ,CardTastic.getTimeStamp())
+	// 		var message = {user: findUserRadioChecked(), text: event.target.value, time: CardTastic.getTimeStamp()};
+	// 		CardTastic.setArrayItem(message);
+	// 		event.target.value = '';
+	// 	};
+	// };
 
 	//CALLBACK FOR EDIT ENTER MESSAGE EVENT LISTENER//
 	var editEnterMessageCallback = function(event, index) {
+		console.log("fjfjf", event, index );
 		if (event.which === 13 && enterMessage.value !== "") {
-			var message = {user: findUserRadioChecked(), text: event.target.value, time: CardTastic.getTimeStamp()};
+			var message = {user: findUserRadioChecked(), text: event.target.value};
 			event.target.value = '';
 			cloneNode(enterMessage);
 			enterMessage = document.getElementById("enterMessage");
-			enterMessage.addEventListener("keypress", enterMessageCallback);
 			var newArray = CardTastic.getArray();
 			newArray.splice(index, 1, message);
 			CardTastic.setArray(newArray);
 		};
 	};
 
-	//CALLBACK FOR CLEAR BOARD EVENT LISTENER//
-	var clearBoardCallback = function() {
+	//CALLBACK FOR CLEAR Card EVENT LISTENER//
+	var clearCardCallback = function() {
 		var chatBlock = document.getElementsByClassName("chatBlock");
 		for (var i = 0; i < chatBlock.length; i++) {
 			chatBlock[i].innerHTML = '';
@@ -70,22 +78,29 @@ var CardTastic = function(object) {
 		newArray.splice(event.target.parentNode.getAttribute("index"), 1);
 		CardTastic.setArray(newArray);
 	};
+// ***************************************************
+//***************************************************
+//((((((((((((((((((((((((((((()))))))))))))))))))))))))))))
+//EVENT LISTENERS NOT WORKING
+//***************************************************
+//***************************************************
 
-	//ADDS EVENT LISTENER FOR ENTER MESSAGE INPUT//
-	var addEnterMessageEventListener = function() {
-		enterMessage.addEventListener("keypress", enterMessageCallback);
-	}();
+	// //ADDS EVENT LISTENER FOR ENTER MESSAGE INPUT//
+	// var addEnterMessageEventListener = function() {
+	// 	enterMessage.addEventListener("keypress", enterMessageCallback);
+	// }();
 
 	//ADDS EVENT LISTENER FOR EDIT ENTER MESSAGE INPUT//
 	var addEditEnterMessageEventListener = function(index) {
+		console.log("addEditEnterMessageEventListener", index);
 		enterMessage.addEventListener("keypress", function(event) {
 			editEnterMessageCallback(event, index);
 		});
 	};
 
-	//ADDS EVENT LISTENER FOR CLEAR BOARD BUTTON//
-	var addClearBoardEventListener = function() {
-		clearBoard.addEventListener("click", clearBoardCallback);
+	//ADDS EVENT LISTENER FOR CLEAR Card BUTTON//
+	var addClearCardEventListener = function() {
+		clearCard.addEventListener("click", clearCardCallback);
 	}();
 
 	//METHOD ADDS EVENT LISTENERS FOR EDIT BUTTONS//

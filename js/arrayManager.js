@@ -34,8 +34,8 @@ var CardTastic = function(object) {
 		CardTastic.addDeleteButtonEventListeners();
 		CardTastic.addEditButtonEventListeners();
 		if(document.getElementById("messages").innerHTML == '') {
-			var clearBoard = document.getElementById("clearBoard");
-			clearBoard.setAttribute('disabled', '');
+			var clearCard = document.getElementById("clearCard");
+			clearCard.setAttribute('disabled', '');
 		};
 	};
 

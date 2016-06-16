@@ -11,28 +11,21 @@
 
     <title>CardTastic E-Cards</title>
 
-    <link href="css/stylesheet.css" rel="stylesheet">
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
-<body>
+<body ng-app = "cardTasticApp">
 
     <div class="brand CardTasticLogo">CardTastic E-Cards</div>
     <div class="address-bar"></div> <!-- there can be cool text here or not -->
@@ -70,84 +63,7 @@
         <!-- /.container -->
     </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="box">
-          <div class="col-md-4"> <!-- Form, generator buttons, and text box -->
-          <!-- title for Form, generator buttons, and text box-->
-          <hr>
-          <h2 class="intro-text text-center">Form and generator buttons and text box</h2>
-          <hr>
-          <hr class="visible-xs">
-
-          <!--***************************
-          To and From Form
-          ******************************-->
-          <form>
-            <fieldset class="form-group">
-              <label for="formGroupExampleInput">To: </label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Optimus Prime">
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="formGroupExampleInput2">From: </label>
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Harry Potter">
-            </fieldset>
-           <button type="submit" class="btn btn-secondary">Submit</button>
-          <input type="text" id="enterMessage" size="25" placeholder="Enter message"autofocus>
-          <input type="button" id="clearBoard" value="Clear message board" onclick=""></input>
-          <div id="userList">
-            <input class="userRadio" type="radio" name="user" value="Xavier"> Xavier
-            <input class="userRadio" type="radio" name="user" value="Joanna"> Joanna
-            <input class="userRadio" type="radio" name="user" value="Mackenzie"> Mackenzie
-            <input class="userRadio" type="radio" name="user" checked="checked" value="Gunter"> Gunter
-            <input class="userRadio" type="radio" name="user" value="Iveta"> Iveta
-            <input class="userRadio" type="radio" name="user" value="Sven"> Sven
-          </div> <!-- userList -->
-
-          </form>
-
-          <!--***********************************
-          Pick-Up Line and Compliment Generator Buttons
-          ****************************************-->
-          <div class="generator-buttons"> <!-- holds buttons for generators -->
-          <button type="button" class="btn btn-success">Insert Pick-Up Line</button>
-          <button type="button" class="btn btn-success">Insert Compliment</button>
-          </div>  <!-- holds buttons for generators -->
-
-          <!--***********************************
-          Insert Personalized Text Box
-          ****************************************-->
-
-           <fieldset class="form-group personalized-text-box">
-              <label for="exampleTextarea">Or Insert Your Own Loving Message: </label>
-              <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="You are the Obi-Wan for Me!"></textarea>
-            </fieldset>
-           <button type="submit" class="btn btn-secondary">Submit</button>
-      </div><!--  class col-md-4, Form, generator buttons, and text box-->
-      <div class="col-md-6"><hr>
-          <h2 class="intro-text text-center">Actual Card</h2>
-          <hr>
-          <hr class="visible-xs">
-          <p></p> <!-- empty p tag for hold the text -->
-      </div><!--col-md-6-->
-      <div class="col-md-2"> <!-- toggle theme buttons -->
-          <hr>
-          <h2 class="intro-text text-center">Toggle Themes Buttons</h2>
-          <hr>
-          <hr class="visible-xs">
-          <!--***********************************
-          Theme Toggle Buttons
-          ****************************************-->
-          <div id="options">
-           <button type="button" class="btn theme-buttons" id="dark-theme" name="theme" value="darkTheme">Dark Theme</button>
-           <button type="button" class="btn theme-buttons" id="light-theme" name="theme" value="lightTheme">Light Theme</button>
-           <button type="button" class="btn theme-buttons" id="romantic-theme" name="theme" value="romanticTheme">Romantic Theme</button>
-           </div>
-
-                </div><!--col-md-2 toggle theme buttons-->
-            </div> <!-- box -->
-        </div> <!-- row -->
-    </div><!-- /.container -->
+    <div ng-view></div>
 
     <footer>
         <div class="container">
@@ -167,12 +83,21 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
     <script src="http://pickuplinegenerator.com/api.asp" type="text/javascript"></script>
 
+    <!-- Angular -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <!--NG-Route-->
+    <script src="/bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+
+    <script src="/app/CardTastic.js" type="text/javascript"></script>
+    <script src="/controllers/cardController.js" type="javascript"></script>
+    <script src="/app/main.config.js" type="text/javascript"></script>
     <script src="/js/arrayManager.js" type="text/javascript" charset="utf-8" async defer></script>
-    <script src="/js/domManager.js" type="text/javascript" charset="utf-8" async defer></script>
-    <script src="/js/xhr.js" type="text/javascript" charset="utf-8" async defer></script>
-    <script src="/js/options.js" type="text/javascript" charset="utf-8" async defer></script>
-</body>
+<!--     <script src="/js/domManager.js" type="text/javascript" charset="utf-8" async defer></script>
+ -->    <script src="/js/xhr.js" type="text/javascript" charset="utf-8" async defer></script>
+<!--     <script src="/js/options.js" type="text/javascript" charset="utf-8" async defer></script>
+ --></body>
 
 </html>

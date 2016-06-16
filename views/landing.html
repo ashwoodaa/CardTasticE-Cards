@@ -1,0 +1,80 @@
+<div class="container">
+      <div class="row">
+        <div class="box">
+          <div class="col-md-4"> <!-- Form, generator buttons, and text box -->
+          <!-- title for Form, generator buttons, and text box-->
+          <hr>
+          <h2 class="intro-text text-center">Form and generator buttons and text box</h2>
+          <hr>
+          <hr class="visible-xs">
+
+          <!--***************************
+          To and From Form
+          ******************************-->
+          <form>
+            <fieldset class="form-group">
+              <label for="formGroupExampleInput">To: </label>
+              <input ng-model="to" type="text" class="form-control" id="formGroupExampleInput" placeholder="Optimus Prime">
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="formGroupExampleInput2">From: </label>
+              <input ng-model="from" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Harry Potter">
+            </fieldset>
+           <button type="submit" class="btn btn-secondary">Submit</button>
+
+          </form>
+
+          <!--******************************************
+          Pick-Up Line and Compliment Generator Buttons
+          ***********************************************-->
+          <div class="generator-buttons"> <!-- holds buttons for generators -->
+          <button type="button" class="btn btn-success">Insert Pick-Up Line</button>
+          <button type="button" class="btn btn-success">Insert Compliment</button>
+          </div>  <!-- holds buttons for generators -->
+
+          <!--******************************************
+          Insert Personalized Text Box
+          **********************************************-->
+
+           <fieldset class="form-group personalized-text-box">
+              <label for="exampleTextarea">Or Insert Your Own Loving Message: </label>
+              <input ng-model="personalizedTextBox" type="text" class="form-control" id="enterMessage" rows="3" placeholder="You are the Obi-Wan for Me!"/>
+            </fieldset>
+           <button type="submit" class="btn btn-secondary">Submit</button>
+          <input type="button" id="clearCard" value="Clear message card"></input>
+
+      </div><!--  class col-md-4, Form, generator buttons, and text box-->
+
+          <!--******************************************
+          Actual Card
+          **********************************************-->
+      <div class="col-md-6">
+          <hr>
+          <h2 class="intro-text text-center">Actual Card</h2>
+          <hr>
+          <hr class="visible-xs">
+          <div id="messages" class="actualCard" >
+          <h3>{{ title }}</h3>
+          <p id="to">To: {{ to }}</p>
+          <p id="from">From: {{ from }}</p>
+          <p id="textAreaForCard">{{ personalizedTextBox }}</p>
+          </div>
+      </div><!--col-md-6-->
+      <div class="col-md-2"> <!-- toggle theme buttons -->
+          <hr>
+          <h2 class="intro-text text-center">Toggle Themes Buttons</h2>
+          <hr>
+          <hr class="visible-xs">
+          <!--***********************************
+          Theme Toggle Buttons
+          ****************************************-->
+          <div id="options">
+           <button type="button" class="btn theme-buttons" id="dark-theme" name="theme" value="darkTheme">Dark Theme</button>
+           <button type="button" class="btn theme-buttons" id="light-theme" name="theme" value="lightTheme">Light Theme</button>
+           <button type="button" class="btn theme-buttons" id="romantic-theme" name="theme" value="romanticTheme">Romantic Theme</button>
+           </div>
+
+                </div><!--col-md-2 toggle theme buttons-->
+            </div> <!-- box -->
+        </div> <!-- row -->
+    </div><!-- /.container -->
