@@ -1,15 +1,11 @@
-<!--//////////////////////////////////////////////////////
-                LANDING.HTML
-As of right now this page is for nothing but looks because
-I want people to got to "addCard" to add a card to their collection.
-An exact replica but also functional version is located at
-#/addCard url
-////////////////////////////////////////////////////////-->
-
+    <!--//////////////////////////////////////////////////////
+    Add New Card (was was pulled from addCard.html)
+    ////////////////////////////////////////////////////////-->
 
 <div class="container">
      <div class="row">
        <div class="box">
+       <h1 class="intro-text text-center">Add Card To <strong>Your</strong> Collection</h1>
          <div class="col-md-4"> <!-- Form, generator buttons, and text box -->
          <!-- title for Form, generator buttons, and text box-->
          <hr>
@@ -24,7 +20,7 @@ An exact replica but also functional version is located at
            <fieldset class="form-group">
              <label for="formGroupExampleInput">To: </label>
              <input
-             ng-model="card.to"
+             ng-model="add.to"
              type="text"
              class="form-control"
              id="formGroupExampleInput"
@@ -33,7 +29,7 @@ An exact replica but also functional version is located at
            <fieldset class="form-group">
              <label for="formGroupExampleInput2">From: </label>
              <input
-             ng-model="card.from"
+             ng-model="add.from"
              type="text"
              class="form-control"
              id="formGroupExampleInput2"
@@ -46,8 +42,8 @@ An exact replica but also functional version is located at
          ***********************************************-->
 
          <div class="generator-buttons"> <!-- holds buttons for generators -->
-         <button ng-click="card.pickUpLineGenerator()" type="button" class="btn btn-success">Insert Pick-Up Line</button>
-         <button ng-click="card.complimentGenerator()" type="button" class="btn btn-success">Insert Compliment</button>
+         <button ng-click="add.pickUpLineGenerator()" type="button" class="btn btn-success">Insert Pick-Up Line</button>
+         <button ng-click="add.complimentGenerator()" type="button" class="btn btn-success">Insert Compliment</button>
          </div>  <!-- holds buttons for generators -->
 
          <!--******************************************
@@ -57,7 +53,7 @@ An exact replica but also functional version is located at
           <fieldset class="form-group personalized-text-box">
              <label for="exampleTextarea">Or Insert Your Own Loving Message: </label>
              <input
-             ng-model="card.personalizedTextBox"
+             ng-model="add.personalizedTextBox"
              type="text"
              class="form-control"
              id="enterMessage"
@@ -81,12 +77,12 @@ An exact replica but also functional version is located at
          <hr>
          <hr class="visible-xs">
          <div id="messages" class="niceBorder" >
-         <h3>{{ card.title }}</h3>
-         <p id="to">To: {{ card.to }}</p>
-         <p id="from">From: {{ card.from }}</p>
-         <p id="textAreaForCard">{{ card.personalizedTextBox }}</p>
+         <h3>{{ add.title }}</h3>
+         <p id="to">To: {{ add.to }}</p>
+         <p id="from">From: {{ add.from }}</p>
+         <p id="textAreaForCard">{{ add.personalizedTextBox }}</p>
          </div>
-          <button ng-click="card.saveCardToCollection()" type="submit" class="btn btn-secondary">Submit</button>
+          <button class="addCardButton btn btn-secondary" type="button" ng-click="add.addCard()">Add Card</button><!--  what is "addNewCard.addCard()" -->
 
      </div><!--col-md-6-->
 

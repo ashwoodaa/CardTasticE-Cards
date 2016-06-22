@@ -1,3 +1,6 @@
+<!--//////////////////////////////////////////////////////
+                INDEX.HTML
+////////////////////////////////////////////////////////-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +21,15 @@
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
     <link href="css/stylesheet.css" rel="stylesheet">
+    <!-- <link href="css/login.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this login -->
+    <link href="signin.css" rel="stylesheet">
+
+
+<!--     BANANAS THEME TOGGLE DEMO
+     <link rel="stylesheet" ng-href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/{{ css }}/bootstrap.min.css">
+    <link rel="stylesheet" ng-href="layout-{{ layout }}.css"> -->
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -31,32 +43,48 @@
     <div class="address-bar"></div> <!-- there can be cool text here or not -->
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
+    <nav
+    class="navbar navbar-default"
+    role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button
+                type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">CardTastic E-Cards</a>
+                <a
+                class="navbar-brand"
+                href="index.html">
+                CardTastic E-Cards
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div
+            class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="#/">Home</a>
                     </li>
                     <li>
-                        <a href="collection.html">Collection</a>
+                        <a href="#/collection">Collection</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="#/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#/login">Login</a>
                     </li>
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -78,26 +106,35 @@
         </div>
     </footer>
 
+
+    <!--******************************************
+    Scripts
+    **********************************************-->
+    <!--FireBase-->
+    <script src="bower_components/firebase/firebase.js"></script>
+
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="http://pickuplinegenerator.com/api.asp" type="text/javascript"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Angular -->
     <script src="bower_components/angular/angular.min.js"></script>
-    <!--NG-Route-->
-    <script src="/bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
 
-    <script src="/app/CardTastic.js" type="text/javascript"></script>
-    <script src="/controllers/cardController.js" type="javascript"></script>
-    <script src="/app/main.config.js" type="text/javascript"></script>
-    <script src="/js/arrayManager.js" type="text/javascript" charset="utf-8" async defer></script>
-<!--     <script src="/js/domManager.js" type="text/javascript" charset="utf-8" async defer></script>
- -->    <script src="/js/xhr.js" type="text/javascript" charset="utf-8" async defer></script>
-<!--     <script src="/js/options.js" type="text/javascript" charset="utf-8" async defer></script>
- --></body>
+    <!--NG-Route-->
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+    <script src="app/CardTastic.js"></script>
+    <script src="app/main.config.js"></script>
+    <script src="factories/authFactory.js"></script>
+    <script src="factories/cardFactory.js"></script>
+    <script src="factories/collectionFactory.js"></script>
+    <script src="factories/loginFactory.js"></script>
+    <script src="controllers/cardController.js"></script>
+    <script src="controllers/authController.js"></script>
+    <script src="controllers/collectionController.js"></script>
+
+  </body>
 
 </html>
