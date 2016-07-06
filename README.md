@@ -1,5 +1,6 @@
 # CardTasticE-Cards
-E-Card Maker with Pick-Up Line and Compliment APIs
+---
+#### E-Card Maker with Pick-Up Line and Compliment Generator
 ![Alt text](img/screenshot.PNG?raw=true "Screen Shot")
 
 
