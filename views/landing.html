@@ -1,0 +1,137 @@
+<!--//////////////////////////////////////////////////////
+                LANDING.HTML
+As of right now this page is for nothing but looks because
+I want people to got to "addCard" to add a card to their collection.
+An exact replica but also functional version is located at
+#/addCard url
+////////////////////////////////////////////////////////-->
+
+
+<div class="container">
+     <div class="row">
+       <div class="box">
+         <div class="col-md-4"> <!-- Form, generator buttons, and text box -->
+         <!-- title for Form, generator buttons, and text box-->
+         <hr>
+         <h2 class="intro-text text-center">Form and generator buttons and text box</h2>
+         <hr>
+         <hr class="visible-xs">
+
+         <!--***************************
+         To and From Form
+         ******************************-->
+         <form>
+           <fieldset class="form-group">
+             <label for="formGroupExampleInput">To: </label>
+             <input
+             ng-model="card.to"
+             type="text"
+             class="form-control"
+             id="formGroupExampleInput"
+             placeholder="Optimus Prime">
+           </fieldset>
+           <fieldset class="form-group">
+             <label for="formGroupExampleInput2">From: </label>
+             <input
+             ng-model="card.from"
+             type="text"
+             class="form-control"
+             id="formGroupExampleInput2"
+             placeholder="Harry Potter">
+           </fieldset>
+         </form>
+
+         <!--******************************************
+         Pick-Up Line and Compliment Generator Buttons
+         ***********************************************-->
+
+         <div class="generator-buttons"> <!-- holds buttons for generators -->
+         <button ng-click="card.pickUpLineGenerator()" type="button" class="btn btn-success">Insert Pick-Up Line</button>
+         <button ng-click="card.complimentGenerator()" type="button" class="btn btn-success">Insert Compliment</button>
+         </div>  <!-- holds buttons for generators -->
+
+         <!--******************************************
+         Insert Personalized Text Box
+         **********************************************-->
+
+          <fieldset class="form-group personalized-text-box">
+             <label for="exampleTextarea">Or Insert Your Own Loving Message: </label>
+             <input
+             ng-model="card.personalizedTextBox"
+             type="text"
+             class="form-control"
+             id="enterMessage"
+             rows="3"
+             placeholder="You are the Obi-Wan for Me!"/>
+           </fieldset>
+         <input
+         type="button"
+         id="clearCard"
+         value="Clear message card">
+         </input>
+
+     </div><!--  class col-md-4, Form, generator buttons, and text box-->
+
+         <!--******************************************
+         Actual Card
+         **********************************************-->
+     <div class="col-md-6">
+         <hr>
+         <h2 class="intro-text text-center">Actual Card</h2>
+         <hr>
+         <hr class="visible-xs">
+         <div id="messages" class="niceBorder" >
+         <h3>{{ card.title }}</h3>
+         <p id="to">To: {{ card.to }}</p>
+         <p id="from">From: {{ card.from }}</p>
+         <p id="textAreaForCard">{{ card.personalizedTextBox }}</p>
+         </div>
+          <button ng-click="card.saveCardToCollection()" type="submit" class="btn btn-secondary submitButton pull-right">Submit</button>
+
+     </div><!--col-md-6-->
+
+         <!--***********************************
+         Theme Toggle Buttons
+         ****************************************-->
+
+<!--          ng-click with a themes controller
+         when you click on it it will run a function that will
+         switch the css on it
+ --><div class="col-md-2"> <!-- toggle theme buttonss  -->
+         <hr>
+         <h2 class="intro-text text-center">Toggle Themes Buttons</h2>
+         <hr>
+         <hr class="visible-xs">
+         <div id="options">
+          <button
+          type="button"
+          class="btn theme-buttons"
+          id="dark-theme"
+          name="theme"
+          value="darkTheme">
+          Dark Theme
+          </button>
+
+          <button
+          type="button"
+          class="btn theme-buttons"
+          id="light-theme"
+          name="theme"
+          value="lightTheme">
+          Light Theme
+          </button>
+
+          <button
+          type="button"
+          class="btn theme-buttons"
+          id="romantic-theme"
+          name="theme"
+          value="romanticTheme">
+          Romantic Theme
+          </button>
+          </div> <!-- options -->
+
+    </div><!--col-md-2 toggle theme buttons-->
+           </div> <!-- box -->
+       </div> <!-- row -->
+   </div><!-- /.container

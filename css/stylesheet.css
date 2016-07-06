@@ -1,0 +1,115 @@
+/*********************************************************
+To and From, Button Generators, and Personalized Text Box
+**********************************************************/
+
+.generator-buttons {
+	margin: 15px;
+}
+
+.personalized-text-box {
+	margin: 25px;
+}
+
+.niceBorder {
+	padding: 5px;
+ 	border: 1px dashed #464646;
+	box-shadow: 0 0 0 3px #fff, 0 0 0 5px #ddd, 0 0 0 10px #fff, 0 0 2px 10px #B7B5B5;
+}
+
+/********************************************************
+SUBMIT BUTTON
+*********************************************************/
+.submitButton {
+  margin: 20px;
+}
+
+/*
+login*/
+
+.loginText {
+  color: #fff;
+}
+
+
+
+/*********************************************************
+Theme Buttons
+**********************************************************/
+
+.theme-buttons {
+
+	text-align:center;
+	margin: 10px;
+}
+
+
+/*CSS FOR DARK THEME*/
+
+.makeDark {
+  background-color: darkgrey;
+  border: 1px solid;
+}
+
+.makeDark .CardTasticLogo {
+	color: #000;
+}
+
+.makeDark #navBar {
+  color: black;
+}
+
+.makeDark h1 {
+  color: #DC3030;
+}
+
+.makeDark #messages {
+  border-color: white;
+}
+
+/*CSS FOR LIGHT THEME*/
+
+.makeLight .CardTasticLogo {
+	color: #B2A2B2;
+}
+
+.makeLight {
+  background-color: green;
+  color: #000;
+  border: 1px solid;
+}
+
+.makeLight #navBar {
+  color: black;
+}
+.makeLight h1 {
+  color: #0A3710;
+}
+
+.makeLight #messages {
+  border-color: white;
+}
+
+/*CSS FOR ROMANTIC THEME*/
+
+.makeRomantic .CardTasticLogo {
+	color: #A80C0C;
+}
+
+.makeRomantic {
+  background-color: #474747;
+  color: #fff;
+  border: 1px solid;
+}
+
+.makeRomantic #navBar {
+  color: black;
+
+.makeRomantic h1 {
+  color: #848584;
+}
+
+.makeRomantic #messages {
+  border-color: yellow;
+}
+
+
