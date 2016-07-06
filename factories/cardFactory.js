@@ -14,9 +14,9 @@ app.factory('cardFactory', function($http){
 		saveCards(object) {//passing it an object (savedObject)
 			return $http
 			.post("https://cardtastic-e-cards.firebaseio.com/" + object + "/.json")
-			.then(function(response) { //?? is this what would go here?
+			.then(function(response) {
 
-			return response.data //?? is this what would go here?
+			return response.data
 			})
 		}, //saveCards
        getCards(collectionId){

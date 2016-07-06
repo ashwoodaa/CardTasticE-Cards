@@ -29,14 +29,12 @@ app
     }
     const collectionId = collectionFactory.getCollectionId();
 
-
     var savedObject = {
     	title: t.title,
     	to: t.to,
     	from: t.from,
     	personalizedTextBox: t.personalizedTextBox
     }
-
 
     t.addCard = (id) => {
     	console.log("id", id);

@@ -25,7 +25,7 @@
 
     <!-- need to make a grid like system or need to generate a card every time something is saved to a collection  -->
 
-    <h4 ng-click="collections.goToUserCollection()">Show User Collections</h4> <!-- ???why is this not a buttons -->
+    <h4 ng-click="collections.goToUserCollection()">Here is your user collection</h4> <!-- ???why is this not a buttons -->
     <div ng-repeat="(key, collection) in collections.collectionsList">
     <p ng-click="collections.showCollectionCards(key)">{{collection.collectionTitle}}</p>
     <!-- <p>{{collection.url}}</p> -->
